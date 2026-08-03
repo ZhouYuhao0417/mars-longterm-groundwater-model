@@ -1,0 +1,4 @@
+site,interpretation,num_row,num_col,num_lon_e,num_lat_n,den_row,den_col,den_lon_e,den_lat_n
+C1,Mg-carbonate,398,285,76.632167,17.842999,382,329,76.659844,17.852720
+P1,Fe/Mg phyllosilicate,456,292,76.636570,17.807759,519,308,76.646634,17.769482
+A1,Al-OH phase (tentative),321,148,76.545992,17.889783,261,158,76.552282,17.926238

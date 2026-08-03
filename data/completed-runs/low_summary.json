@@ -1,0 +1,92 @@
+{
+  "model": "original_2d_finite_volume_diffusive_wave",
+  "spatial_solver_changed": false,
+  "scenario": {
+    "key": "low",
+    "name": "低：弱持续基流",
+    "process": "constant",
+    "qb_m3s": 100.0,
+    "q0_m3s": 1000.0,
+    "tau_years": 1.0,
+    "duration_years": 10.0,
+    "retention": 0.4
+  },
+  "requested_years": 10.0,
+  "completed_years": 10.0,
+  "complete": true,
+  "paper_usable": true,
+  "source": {
+    "lon_e": 75.93718,
+    "lat_n": 18.136689,
+    "meaning": "combined_total_for_two_conceptual_troughs_applied_once",
+    "geometry_drawn": false
+  },
+  "source_fill_years": null,
+  "water_ledger_km3": {
+    "raw_release": 31.5576,
+    "effective_after_c": 12.62304,
+    "loss_one_minus_c": 18.93456,
+    "source_basin_storage": 12.62304,
+    "downstream_surface_storage": 0.0,
+    "open_boundary_outflow": 0.0,
+    "unresolved_if_partial": 0.0
+  },
+  "outputs": {
+    "covered_sites": 0,
+    "site_count": 3,
+    "maximum_depth_m": 115.10649871826172,
+    "wet_cells_current": 1561,
+    "wet_cells_ever": 1561
+  },
+  "checkpoints": [
+    {
+      "site": "C1",
+      "interpretation": "Mg-carbonate",
+      "lon_e": 76.632167,
+      "lat_n": 17.842999,
+      "row_400m": 149,
+      "col_400m": 167,
+      "reached": false,
+      "arrival_years": null,
+      "current_depth_m": 0.0,
+      "maximum_depth_m": 0.0,
+      "wet_duration_years": 0.0
+    },
+    {
+      "site": "P1",
+      "interpretation": "Fe/Mg phyllosilicate",
+      "lon_e": 76.63657,
+      "lat_n": 17.807759,
+      "row_400m": 154,
+      "col_400m": 168,
+      "reached": false,
+      "arrival_years": null,
+      "current_depth_m": 0.0,
+      "maximum_depth_m": 0.0,
+      "wet_duration_years": 0.0
+    },
+    {
+      "site": "A1",
+      "interpretation": "Al-OH phase (tentative)",
+      "lon_e": 76.545992,
+      "lat_n": 17.889783,
+      "row_400m": 142,
+      "col_400m": 155,
+      "reached": false,
+      "arrival_years": null,
+      "current_depth_m": 0.0,
+      "maximum_depth_m": 0.0,
+      "wet_duration_years": 0.0
+    }
+  ],
+  "numerics": {
+    "grid_m": 400.0,
+    "surface_dt_s": 600.0,
+    "mars_gravity_m_s2": 3.721,
+    "manning_n": 0.0545,
+    "dynamic_computational_window": true,
+    "source_prefill_integrated_analytically": true,
+    "downstream_time_skipping": false,
+    "downstream_mass_error": 0.0
+  }
+}

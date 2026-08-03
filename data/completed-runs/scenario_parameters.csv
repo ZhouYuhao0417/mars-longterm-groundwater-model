@@ -1,0 +1,4 @@
+scenario,process,Qb_m3s,Q0_m3s,tau_years,T_years,C,raw_km3,effective_km3,loss_km3,source_fill_years
+low,constant,100,0,NA,10,0.4,31.557600,12.623040,18.934560,not_reached
+medium,exponential,300,3000,3,20,0.7,473.002549,331.101784,141.900765,2.660227433
+high,staged_pulse,500,5000,5,30,1.0,837.854280,837.854280,0.000000,1.028033395

@@ -1,0 +1,9 @@
+# Figure captions
+
+## Figure 1
+
+Interactive presentation of the long-term groundwater-outflow model under the completed high scenario. The original two-dimensional finite-volume diffusive-wave solver is retained, while the source boundary is prescribed as a staged long-term hydrograph. One equivalent source at 75.937180°E, 18.136689°N represents the combined discharge of two conceptual troughs and is applied once; trough geometry is neither inferred nor drawn. The map shows the final 30 yr state for the high scenario (Qb = 500 m³ s⁻¹, Q0 = 5000 m³ s⁻¹, C = 1.0). The DEM controls source-basin storage, natural spill, downstream surface-water routing and open-boundary outflow. Source, spillway and CRISM markers are plotted directly from the model-grid indices documented in `POINT_COORDINATE_AUDIT.md`. Blue intensity represents log-scaled water depth in wet cells.
+
+## Figure 2
+
+Completed long-term groundwater-outflow simulations and water budgets. (a) Final state of the low scenario, with constant baseflow Qb = 100 m³ s⁻¹, duration T = 10 yr and effective retention coefficient C = 0.4. Effective supply remains within the DEM-defined source basin. (b) Final state of the high staged-pulse scenario, with Qb = 500 m³ s⁻¹, Q0 = 5000 m³ s⁻¹, duration T = 30 yr and C = 1.0. Blue intensity represents log-scaled water depth. (c) Prescribed hydrographs for the low, medium and high parameter scenarios. The medium hydrograph is shown only as a prescribed boundary condition because its two-dimensional spatial run is incomplete. (d) Mass-conservative water budgets for the completed low and high runs, partitioned among unretained volume, source-basin storage, downstream surface storage and open-boundary outflow. Only runs with `complete=true` and `paper_usable=true` are shown as quantitative spatial results.

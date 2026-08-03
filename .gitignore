@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+model/outputs/*_state.npz
+model/outputs/*_arrival_years.npy
+model/outputs/*_current_depth_m.npy
+model/outputs/*_maximum_depth_m.npy
+model/outputs/*_wet_duration_years.npy
+/model/inputs/

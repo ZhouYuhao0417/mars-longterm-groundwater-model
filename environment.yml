@@ -1,0 +1,7 @@
+name: mars-longterm-groundwater
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.3.5
+  - pillow=12.2.0

@@ -1,0 +1,20 @@
+path,bytes,sha256,role,publication_status,provenance_key
+completed-runs/high_arrival_years.npy,376328,2edd17211b79a5af402bf5d72f61f68b7f32c38e94e34b95a3def94bf13e3c8c,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/high_current_depth_m.npy,376328,d0aa6378fe2a51ba216cd4e4408fd786a52a828a634286fd27f2a5968bf05ec6,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/high_map.png,101220,666adcaa5f8a30d2a6b139efe767f0167f1971375a7edcf845024c506687b3b8,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/high_maximum_depth_m.npy,376328,b8c9eefb8ec443bd99c682089e83051dff10373f5548193a358d309e683e5936,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/high_summary.json,3046,4352b9edf705502ff9f70c9d02505ad2dc8f81fb8479cf6819078c465e4131bf,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/high_wet_duration_years.npy,376328,6b5b0058ff341c3bc086f64e6711c56f455b13cf249f874a2347054b46227c80,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_arrival_years.npy,376328,ab3cb078bee57069a702450c8a0d3be0a66009f055a804a8c7a0f0264109fc98,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_current_depth_m.npy,376328,b70380ac157fb86a21be34838b4a5a2067d714063d7a0ba6666cbf716fb795d6,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_map.png,73902,00f4dedb2240becc96ab8bec455a98302e745c18817795ac7d9ed7fab2da706d,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_maximum_depth_m.npy,376328,b70380ac157fb86a21be34838b4a5a2067d714063d7a0ba6666cbf716fb795d6,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_summary.json,2411,82c3b3594c9b460f611f666d9a495fd662724cb5e8c95b22150879481d8a5b06,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/low_wet_duration_years.npy,376328,106b8517b5d8fe36ab4adb05702a684b859eda1d0afe2533a8001da2f652a5a6,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/scenario_parameters.csv,332,7f18cc7268305c67516120770e811748ec252fcb1e4bb4ae10cfaa67204d578f,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/steady_acceleration_validation.json,622,34f1cd829e299e432136d52b0775a87bb1e2c9a78e5a5b75b9d8641512630949,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+completed-runs/回归与时间步审计.json,1094,195c74c020fff275d9989f102f3c1362325eeb489b05ec43480cd4a8bd83c4c2,completed exact 2-D run artifact,paper-usable or numerical audit,exact_2d_run
+conservative-model.npz,1862419,855ccda77d25eaafc8097ebf2f0ca0dbfb8975ba785dd683b87a22e5cc70afca,canonical derived model input,model input,HRSC_CTX_derived
+crism_selected_sites.csv,331,ab1c3af182d4e0467a70e89d5a8ad61ce0baf8cdb10335e597b25fec65e426ea,prescribed CRISM site table,model input,CRISM_HRL0001FC92
+derived/ctx-hrsc-extended-basemap.jpg,423072,35ee59c71087f39f8076fb2b3ba3fa53fe50689e0217c0d0b427af2e92bc940b,derived visualization layer,non-quantitative,CTX_HRSC_visualization
+excluded/medium_summary_incomplete.json,2533,f4f7183c677820662736c68d1df6bf308c5bef77c8d0cd1c4656de1b08b7985f,incomplete-run audit record,excluded from quantitative claims,incomplete_audit

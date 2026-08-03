@@ -1,0 +1,24 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Zhou Yuhao
+
+The author-created documentation, captions, interface design, and figure
+composition in this repository are licensed under the Creative Commons
+Attribution 4.0 International License, to the extent that Zhou Yuhao holds the
+relevant rights.
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided that you give appropriate credit, provide a link to the
+license, and indicate whether changes were made. You may not apply legal terms
+or technological measures that legally restrict others from doing anything
+the license permits.
+
+Full legal code:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Human-readable summary:
+https://creativecommons.org/licenses/by/4.0/
+
+This licence does not replace or override the terms attached to underlying
+third-party planetary products, including HRSC, CTX, CRISM, and other source
+data. See DATA_SOURCES.md for provenance and attribution.

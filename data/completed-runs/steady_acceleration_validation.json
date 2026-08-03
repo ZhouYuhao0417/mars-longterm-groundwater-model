@@ -1,0 +1,17 @@
+{
+  "source_state_postspill_days": 570.0,
+  "comparison_days": 120.0,
+  "candidate_explicit_days": 60.0,
+  "candidate_verified_skip_days": 60.0,
+  "wet_mask_iou": 0.9912428427079825,
+  "depth_rmse_m": 0.1656858681388357,
+  "depth_max_abs_difference_m": 6.09990056976676,
+  "stored_relative_difference": 0.006117218537977867,
+  "baseline_new_arrival_cells": 40,
+  "candidate_new_arrival_cells": 19,
+  "baseline_mass_error": 9.018734756306424e-09,
+  "candidate_mass_error": -1.7228349415678384e-08,
+  "baseline_runtime_s": 112.27225339994766,
+  "candidate_runtime_s": 61.58440439996775,
+  "accepted": false
+}

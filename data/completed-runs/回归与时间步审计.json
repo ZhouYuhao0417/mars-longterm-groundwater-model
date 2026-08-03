@@ -1,0 +1,25 @@
+{
+  "baseline": "2026-07-22 original 2D finite-volume diffusive-wave model",
+  "regression": {
+    "q_m3s": 25000,
+    "day_1_pixel_identical": true,
+    "day_2_pixel_identical": true,
+    "day_30_dynamic_window_pixel_identical": true,
+    "source_weight_sum": 1.0,
+    "mass_relative_error_threshold": 1e-6
+  },
+  "rejected_time_step_shortcuts": [
+    {"dt_s": 900, "day_30_wet_mask_iou": 0.780146},
+    {"dt_s": 1800, "day_30_wet_mask_iou": 0.580772},
+    {"dt_s": 3600, "day_30_wet_mask_iou": 0.404305},
+    {"dt_s": 7200, "day_30_wet_mask_iou": 0.292715},
+    {"dt_s": 21600, "day_30_wet_mask_iou": 0.172873}
+  ],
+  "actual_longterm_flow_checks": [
+    {"q_m3s": 500, "dt_s": 1200, "day_30_wet_mask_iou": 0.847765},
+    {"q_m3s": 500, "dt_s": 1800, "day_30_wet_mask_iou": 0.719950},
+    {"q_m3s": 1000, "dt_s": 1200, "day_30_wet_mask_iou": 0.753582},
+    {"q_m3s": 1000, "dt_s": 1800, "day_30_wet_mask_iou": 0.665771}
+  ],
+  "decision": "Keep 600 s downstream steps; accelerate only the analytically integrable pre-spill source-storage interval and use an exact dynamic dry-cell window."
+}

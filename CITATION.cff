@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software or its figures, please cite the associated paper and this software release."
+title: "Interactive model of long-term Martian groundwater outflow"
+type: software
+authors:
+  - family-names: "Zhou"
+    given-names: "Yuhao"
+version: 1.0.0
+date-released: 2026-08-03
+repository-code: "https://github.com/ZhouYuhao0417/mars-longterm-groundwater-model"
+url: "https://zhouyuhao0417.github.io/mars-longterm-groundwater-model/"
+license: MIT
+keywords:
+  - Mars
+  - groundwater
+  - hydrology
+  - Jezero
+  - numerical modelling
+abstract: "A self-contained interactive presentation and completed-run package extending an original two-dimensional hydrodynamic model to long-term groundwater hydrographs."
