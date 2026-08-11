@@ -385,7 +385,7 @@ def save_outputs(
         "source": {
             "lon_e": 75.937180,
             "lat_n": 18.136689,
-            "meaning": "combined_total_for_two_conceptual_troughs_applied_once",
+            "meaning": "single_equivalent_crater_side_input_after_basin_fill_applied_once_not_ne_sw_trough_surface_flow",
             "geometry_drawn": False,
         },
         "source_fill_years": fill_years,
@@ -474,7 +474,7 @@ def main() -> None:
     parser.add_argument("--scenario", choices=SCENARIOS, default="medium")
     parser.add_argument("--run-name", help="自定义参数的输出前缀；省略时自动生成")
     parser.add_argument("--process", choices=("constant", "exponential", "pulse"))
-    parser.add_argument("--qb", type=float, help="两条概念沟槽合计基流 Qb，m3/s")
+    parser.add_argument("--qb", type=float, help="坑侧单一规定等效输入的基流 Qb，m3/s")
     parser.add_argument("--q0", type=float, help="合计初始或脉冲流量 Q0，m3/s")
     parser.add_argument("--tau-years", type=float)
     parser.add_argument("--duration-years", type=float)

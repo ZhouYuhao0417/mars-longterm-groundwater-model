@@ -138,7 +138,7 @@ class DiffusiveWave2D:
         return slice(y0, y1), slice(x0, x1)
 
     def step(self, total_discharge_m3s: float, dt_s: float = BASE_DT_S) -> None:
-        """推进一个显式步长；Q 是两条概念沟槽合计值，只施加一次。"""
+        """推进一个显式步长；Q 是坑侧单一规定等效输入，只施加一次。"""
         q = max(float(total_discharge_m3s), 0.0)
         dt = float(dt_s)
         if dt <= 0:
