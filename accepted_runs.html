@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="Interactive, QA-gated low and medium hydrology results for the Nili Fossae–Jezero watershed and Jezero crater study.">
+  <title>Accepted low and medium Mars hydrology results</title>
+  <style>
+    :root{--bg:#081014;--panel:#121e24;--panel2:#182830;--line:#334951;--text:#edf7fa;--muted:#9cb1b9;--cyan:#70ddff;--orange:#ff9b62;--green:#76e3a3;--pink:#e18bb5}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at 18% 0,#18303a 0,#081014 48%);color:var(--text);font-family:Inter,"Microsoft YaHei",system-ui,sans-serif}
+    body{padding:18px}.shell{max-width:1420px;margin:auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#0c1519;box-shadow:0 20px 60px #0007}
+    header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding:20px 22px;background:linear-gradient(135deg,#15262d,#0e181d);border-bottom:1px solid var(--line)}
+    h1{margin:0;font-size:23px;line-height:1.2}.sub{margin-top:7px;color:var(--muted);font-size:12px;line-height:1.55;max-width:980px}.badge{border:1px solid #3e6472;background:#17323d;color:#d6f6ff;border-radius:999px;padding:7px 10px;font-size:11px;white-space:nowrap}
+    nav,.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}nav{padding:12px 16px 0}button,a.button,select{font:inherit;color:var(--text);background:#19272d;border:1px solid #425861;border-radius:9px;padding:7px 10px;text-decoration:none}button{cursor:pointer}button.active,button.primary{background:#d8f5ff;color:#07151a;border-color:#d8f5ff;font-weight:700}button.accepted{border-color:#56806a;background:#163026;color:#d4ffe5}
+    main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:14px;padding:14px 16px 18px}.viewer,.side{min-width:0}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:12px}.panel{padding:11px}.toolbar{padding-bottom:10px}.toolbar .spacer{flex:1}.toolbar label{font-size:11px;color:var(--muted)}select{padding:6px 8px}
+    .mapwrap{position:relative;aspect-ratio:1368/1100;overflow:hidden;border-radius:10px;background:#05090b;border:1px solid #3a4c53}.mapwrap canvas{display:block;width:100%;height:100%}.loading{position:absolute;inset:0;display:grid;place-items:center;background:#0d171be8;color:#d8f4ff;font-size:13px;z-index:5}.tip{display:none;position:absolute;pointer-events:none;z-index:6;background:#071014ed;border:1px solid #607984;border-radius:7px;padding:7px 9px;font-size:11px;line-height:1.5;white-space:nowrap}
+    .legend{display:flex;align-items:center;gap:9px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin:9px 2px 0}.grad{width:120px;height:9px;border-radius:999px;background:linear-gradient(90deg,#62d5ff,#258ccd,#244786,#f5b45f)}.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:4px}
+    .side{display:grid;gap:10px;align-content:start}.card{padding:12px}.card h2{font-size:13px;margin:0 0 9px}.status{background:#102b34;border:1px solid #2e5f6f;color:#d2f5ff;border-radius:9px;padding:9px;font-size:11px;line-height:1.55}.status.low{background:#2a2416;border-color:#66562e;color:#ffe5ae}
+    .big{font-size:25px;font-weight:760}.unit{font-size:11px;color:var(--muted);margin-left:4px}.kv{display:grid;grid-template-columns:1fr auto;gap:6px 10px;font-size:11px;margin-top:8px}.kv span:nth-child(odd){color:var(--muted)}.kv span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums}
+    .ledger{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:9px}.ledger div{background:#0d171b;border-radius:8px;padding:8px}.ledger b{display:block;font-size:14px}.ledger small{color:var(--muted);font-size:10px}
+    table{width:100%;border-collapse:collapse;font-size:10px}th,td{padding:6px 3px;border-bottom:1px solid #2d3e45;text-align:right}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:500}.note{font-size:10px;line-height:1.55;color:var(--muted);margin:8px 0 0}
+    footer{padding:11px 17px 14px;border-top:1px solid #26373e;color:#82969e;font-size:10px;line-height:1.5}
+    @media(max-width:980px){main{grid-template-columns:1fr}.side{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){body{padding:0}.shell{border-radius:0}header{display:block}.badge{display:inline-block;margin-top:10px}.side{grid-template-columns:1fr}.toolbar .spacer{display:none}}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div><h1 id="title">Accepted low and medium hydrology results</h1><div id="subtitle" class="sub"></div></div>
+    <div id="qaBadge" class="badge">QA-gated v2 results</div>
+  </header>
+  <nav>
+    <button data-scenario="low_f64_v2">Low v2</button>
+    <button data-scenario="medium_f64_v2" class="active">Medium v2</button>
+    <a id="explorerLink" class="button" href="index.html">Parameter explorer</a>
+    <span style="flex:1"></span>
+    <button id="langButton">中文</button>
+  </nav>
+  <main>
+    <section class="viewer">
+      <div class="panel">
+        <div class="toolbar">
+          <button data-layer="maximum" class="active">Maximum depth</button>
+          <button data-layer="current">Final depth</button>
+          <button data-layer="arrival">Arrival year</button>
+          <button data-layer="duration">Wet duration</button>
+          <span class="spacer"></span>
+          <label for="threshold">Depth display threshold</label>
+          <select id="threshold"><option value="0.05">&gt;0.05 m reporting</option><option value="0.1" selected>&gt;0.1 m display</option></select>
+          <button id="export" class="accepted">Export PNG</button>
+        </div>
+        <div class="mapwrap" id="mapwrap">
+          <canvas id="map" width="1368" height="1100" role="img" aria-label="Accepted low and medium Mars hydrology arrays over regional terrain"></canvas>
+          <div id="loading" class="loading">Loading accepted arrays…</div>
+          <div id="tip" class="tip"></div>
+        </div>
+        <div class="legend"><span class="grad"></span><span id="legendText"></span><span><i class="dot" style="background:#55aee8"></i>HW1</span><span><i class="dot" style="background:#e18bb5"></i>HW2</span><span><i class="dot" style="background:#e17825"></i>HW3</span></div>
+      </div>
+    </section>
+    <aside class="side">
+      <div id="status" class="status"></div>
+      <div class="card"><h2 id="scenarioHeading">Scenario</h2><div><span id="scenarioName" class="big">—</span></div><div id="scenarioMode" class="note"></div><div class="kv"><span id="durationLabel">Completed duration</span><span id="durationValue">—</span><span id="fillLabel">Source fill time</span><span id="fillValue">—</span><span id="numericsLabel">Routing numerics</span><span id="numericsValue">—</span><span id="errorLabel">Ledger error</span><span id="errorValue">—</span></div></div>
+      <div class="card"><h2 id="ledgerHeading">Closed water ledger</h2><div><span id="effective" class="big">—</span><span class="unit">km³</span></div><div class="ledger"><div><b id="raw">—</b><small id="rawLabel">raw release</small></div><div><b id="loss">—</b><small id="lossLabel">unretained</small></div><div><b id="sourceStore">—</b><small id="sourceLabel">source storage</small></div><div><b id="downstreamStore">—</b><small id="downstreamLabel">downstream storage</small></div><div><b id="boundary">—</b><small id="boundaryLabel">boundary export</small></div><div><b id="maxDepth">—</b><small id="maxDepthLabel">maximum depth</small></div></div></div>
+      <div class="card"><h2 id="sitesHeading">Hydrology-guided CRISM sites</h2><table><thead><tr><th id="siteCol">Site</th><th id="classCol">Class</th><th id="depthCol">Cell max</th></tr></thead><tbody id="sites"></tbody></table><p id="siteNote" class="note"></p></div>
+      <div class="card"><h2 id="boundaryHeading">Interpretive boundary</h2><p id="boundaryText" class="note"></p></div>
+    </aside>
+  </main>
+  <footer id="footer"></footer>
+</div>
+<script>
+(()=>{
+  const Q=new URLSearchParams(location.search),requestedLanguage=Q.get('lang'),initialZh=requestedLanguage==='zh'||(requestedLanguage!=='en'&&navigator.language.toLowerCase().startsWith('zh'));
+  let lang=initialZh?'zh':'en',manifest=null,scenario='medium_f64_v2',layer='maximum',activeArray=null,baseReady=false;
+  const cache=new Map(),$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+  const canvas=$('#map'),ctx=canvas.getContext('2d'),wrap=$('#mapwrap'),tip=$('#tip'),loading=$('#loading');
+  const base=new Image();base.src='data/derived/ctx-hrsc-extended-basemap.jpg';base.onload=()=>{baseReady=true;draw()};
+  const TEXT={
+    en:{title:'Accepted low and medium hydrology results',subtitle:'Nili Fossae–Jezero watershed, Jezero crater hydrology, and aqueous-mineral-source study. This view renders the QA-gated arrays behind Figure 6(a,b); it is separate from the adjustable volume-mapped parameter explorer.',badge:'QA-gated v2 results',explorer:'Parameter explorer',lang:'中文',layers:{maximum:'Maximum depth',current:'Final depth',arrival:'Arrival year',duration:'Wet duration'},threshold:'Depth display threshold',export:'Export PNG',loading:'Loading accepted arrays…',scenario:'Scenario',duration:'Completed duration',fill:'Source fill time',numerics:'Routing numerics',error:'Ledger error',ledger:'Closed water ledger',raw:'raw release',loss:'unretained',source:'source storage',downstream:'downstream storage',boundary:'boundary export',max:'maximum depth',sites:'Hydrology-guided CRISM sites',site:'Site',class:'Class',cell:'Cell max',siteNote:'HW1–HW3 were selected using the accepted-medium wet mask. Exact containing-cell co-location is therefore not independent hydrologic validation or proof of mineral provenance.',boundaryHeading:'Interpretive boundary',footer:'Terrain backdrop: archived HRSC–CTX composite. Browser arrays are float32 display copies with source/display hashes; the archived .npy arrays and summaries remain authoritative. Reporting reach is >0.05 m; 0.015 m is numerical-front bookkeeping only.',lowStatus:'Accepted analytical low case: the source basin does not fill, so no downstream hydrodynamic routing occurs.',mediumStatus:'Accepted medium case: analytical prefill is followed by explicit float64 routing at 600 s with no accelerated time skipping.',noFill:'No spill',notApplicable:'not applicable',legendDepth:'Log-scaled water depth; transparent cells are below the selected display threshold.',legendArrival:'Numerical-front arrival year at the 0.015 m diagnostic threshold.',legendDuration:'Wet duration at the 0.015 m numerical-front threshold.'},
+    zh:{title:'已验收的低—中水文情景',subtitle:'面向 Nili Fossae—Jezero 流域、Jezero 陨石坑水文及水成矿物来源研究。本页直接呈现图 6(a,b) 背后的门控通过数组，与可调参数的体积映射探索器分开。',badge:'v2 门控通过结果',explorer:'参数探索器',lang:'English',layers:{maximum:'最大水深',current:'终态水深',arrival:'到达年份',duration:'湿润时长'},threshold:'水深显示阈值',export:'导出 PNG',loading:'正在载入已验收数组…',scenario:'情景',duration:'完成时长',fill:'源坑蓄满时间',numerics:'路由数值设置',error:'水账误差',ledger:'闭合水量账本',raw:'原始出水',loss:'未保留水量',source:'源坑蓄水',downstream:'下游地表储水',boundary:'边界外排',max:'最大水深',sites:'水文引导的 CRISM 点',site:'点位',class:'类别',cell:'网格最大水深',siteNote:'HW1–HW3 的选择使用了已验收中情景湿润掩膜，因此“精确落入含水网格”不是独立水文验证，也不证明矿物物源。',boundaryHeading:'解释边界',footer:'地形底图为归档的 HRSC–CTX 复合数据。浏览器数组是带源文件/显示文件哈希的 float32 显示副本；归档 .npy 数组和摘要才是定量权威记录。报告到达阈值为 >0.05 m；0.015 m 仅用于数值前沿记录。',lowStatus:'已验收的解析低情景：源坑未蓄满，因而没有执行下游水动力路由。',mediumStatus:'已验收的中情景：解析预填充后，以 600 s 步长进行 float64 显式路由，未使用加速跳时。',noFill:'未溢流',notApplicable:'不适用',legendDepth:'水深采用对数色标；低于所选显示阈值的网格透明。',legendArrival:'0.015 m 数值前沿诊断阈值对应的到达年份。',legendDuration:'0.015 m 数值前沿阈值对应的湿润时长。'}
+  };
+  const t=()=>TEXT[lang],fmt=(v,d=3)=>Number.isFinite(v)?Number(v).toLocaleString(lang==='zh'?'zh-CN':'en-US',{maximumFractionDigits:d}):'—';
+  async function getArray(key,name){const id=key+'_'+name;if(cache.has(id))return cache.get(id);const response=await fetch('data/accepted-v2/'+id+'.f32');if(!response.ok)throw new Error(response.status+' '+id);const a=new Float32Array(await response.arrayBuffer());if(a.length!==manifest.grid.rows*manifest.grid.cols)throw new Error('Array length mismatch: '+id);cache.set(id,a);return a}
+  function setText(){
+    document.documentElement.lang=lang;document.title=t().title;$('#title').textContent=t().title;$('#subtitle').textContent=t().subtitle;$('#qaBadge').textContent=t().badge;$('#explorerLink').textContent=t().explorer;$('#explorerLink').href=lang==='zh'?'index_zh.html':'index.html';$('#langButton').textContent=t().lang;
+    $$('[data-layer]').forEach(b=>b.textContent=t().layers[b.dataset.layer]);$('#threshold').previousElementSibling.textContent=t().threshold;$('#threshold').options[0].text=lang==='zh'?'>0.05 m 报告阈值':'>0.05 m reporting';$('#threshold').options[1].text=lang==='zh'?'>0.1 m 制图阈值':'>0.1 m display';$('#export').textContent=t().export;loading.textContent=t().loading;
+    $('#scenarioHeading').textContent=t().scenario;$('#durationLabel').textContent=t().duration;$('#fillLabel').textContent=t().fill;$('#numericsLabel').textContent=t().numerics;$('#errorLabel').textContent=t().error;$('#ledgerHeading').textContent=t().ledger;$('#rawLabel').textContent=t().raw;$('#lossLabel').textContent=t().loss;$('#sourceLabel').textContent=t().source;$('#downstreamLabel').textContent=t().downstream;$('#boundaryLabel').textContent=t().boundary;$('#maxDepthLabel').textContent=t().max;$('#sitesHeading').textContent=t().sites;$('#siteCol').textContent=t().site;$('#classCol').textContent=t().class;$('#depthCol').textContent=t().cell;$('#siteNote').textContent=t().siteNote;$('#boundaryHeading').textContent=t().boundaryHeading;$('#footer').textContent=t().footer;
+    if(manifest){renderCards();draw()}
+  }
+  function ramp(value,kind){const stops=kind==='time'?[[25,37,75],[63,92,151],[69,155,170],[233,177,92]]:[[84,210,255],[36,138,205],[39,61,129],[247,177,88]];const x=Math.max(0,Math.min(.999,value))*(stops.length-1),i=Math.floor(x),f=x-i,a=stops[i],b=stops[Math.min(i+1,stops.length-1)];return a.map((v,j)=>Math.round(v+(b[j]-v)*f))}
+  function star(x,y,color){ctx.save();ctx.beginPath();for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,r=i%2?7:14,p=[x+Math.cos(a)*r,y+Math.sin(a)*r];i?ctx.lineTo(...p):ctx.moveTo(...p)}ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.lineWidth=2.5;ctx.strokeStyle='#071014';ctx.stroke();ctx.restore()}
+  function draw(){
+    if(!manifest||!activeArray||!baseReady)return;const rows=manifest.grid.rows,cols=manifest.grid.cols,threshold=+$('#threshold').value,off=document.createElement('canvas');off.width=cols;off.height=rows;const ox=off.getContext('2d'),img=ox.createImageData(cols,rows),scenarioData=manifest.scenarios[scenario];let max=0,min=0;
+    if(layer==='arrival'||layer==='duration')max=scenarioData.duration_years;else{for(const v of activeArray)if(Number.isFinite(v)&&v>max)max=v;min=threshold}
+    for(let i=0;i<activeArray.length;i++){const v=activeArray[i],p=i*4;let show=false,n=0;if(layer==='arrival'){show=Number.isFinite(v);n=v/max}else if(layer==='duration'){show=Number.isFinite(v)&&v>0;n=v/max}else{show=Number.isFinite(v)&&v>threshold;n=(Math.log1p(v)-Math.log1p(min))/(Math.log1p(max)-Math.log1p(min)||1)}if(!show)continue;const c=ramp(n,layer==='arrival'||layer==='duration'?'time':'depth');img.data[p]=c[0];img.data[p+1]=c[1];img.data[p+2]=c[2];img.data[p+3]=188}ox.putImageData(img,0,0);
+    ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(base,0,0,canvas.width,canvas.height);ctx.imageSmoothingEnabled=false;ctx.drawImage(off,0,0,canvas.width,canvas.height);
+    const colors={HW1:'#55aee8',HW2:'#e18bb5',HW3:'#e17825'};for(const s of manifest.sites){const x=(s.col+.5)*4,y=(s.row+.5)*4;star(x,y,scenario==='medium_f64_v2'?colors[s.site]:'#87949a');ctx.font='700 18px Inter,Microsoft YaHei,sans-serif';ctx.lineWidth=4;ctx.strokeStyle='#071014';ctx.strokeText(s.site,x+14,y-10);ctx.fillStyle='#f5fbfd';ctx.fillText(s.site,x+14,y-10)}
+    $('#legendText').textContent=layer==='arrival'?t().legendArrival:layer==='duration'?t().legendDuration:t().legendDepth;
+  }
+  async function render(){
+    loading.style.display='grid';try{activeArray=await getArray(scenario,layer);draw();renderCards();loading.style.display='none'}catch(error){loading.textContent=(lang==='zh'?'载入失败：':'Load failed: ')+error.message}
+  }
+  async function renderCards(){
+    const s=manifest.scenarios[scenario],zh=lang==='zh',led=s.ledger_km3,num=s.numerics;$('#scenarioName').textContent=zh?s.label_zh:s.label_en;$('#scenarioMode').textContent=zh?s.mode_zh:s.mode_en;$('#durationValue').textContent=fmt(s.duration_years,3)+(zh?' 年':' yr');$('#fillValue').textContent=s.fill_years===null?t().noFill:fmt(s.fill_years,6)+(zh?' 年':' yr');$('#numericsValue').textContent=scenario==='low_f64_v2'?(zh?'解析、不路由':'analytical; no routing'):'float64 · 600 s · no skip';$('#errorValue').textContent=Number(num.total_ledger_relative_error).toExponential(2);$('#effective').textContent=fmt(led.effective_after_c,6);$('#raw').textContent=fmt(led.raw_release,3);$('#loss').textContent=fmt(led.loss_one_minus_c,3);$('#sourceStore').textContent=fmt(led.source_basin_storage,3);$('#downstreamStore').textContent=fmt(led.downstream_surface_storage,3);$('#boundary').textContent=fmt(led.open_boundary_outflow,3);$('#maxDepth').textContent=fmt(s.outputs.maximum_depth_m,3)+' m';
+    const status=$('#status');status.textContent=scenario==='low_f64_v2'?t().lowStatus:t().mediumStatus;status.classList.toggle('low',scenario==='low_f64_v2');$('#boundaryText').textContent=manifest.source_interpretation[lang];
+    const maxArray=await getArray(scenario,'maximum');$('#sites').innerHTML=manifest.sites.map(site=>{const value=maxArray[site.row*manifest.grid.cols+site.col];return '<tr><td>'+site.site+'</td><td>'+site.class+'</td><td>'+fmt(value,3)+' m</td></tr>'}).join('');
+  }
+  canvas.addEventListener('mousemove',event=>{if(!activeArray||!manifest)return;const r=canvas.getBoundingClientRect(),col=Math.max(0,Math.min(manifest.grid.cols-1,Math.floor((event.clientX-r.left)/r.width*manifest.grid.cols))),row=Math.max(0,Math.min(manifest.grid.rows-1,Math.floor((event.clientY-r.top)/r.height*manifest.grid.rows))),v=activeArray[row*manifest.grid.cols+col];tip.style.display='block';tip.style.left=Math.min(event.clientX-r.left+12,r.width-185)+'px';tip.style.top=Math.min(event.clientY-r.top+12,r.height-70)+'px';tip.textContent='row '+row+', col '+col+' · '+(Number.isFinite(v)?fmt(v,layer==='current'||layer==='maximum'?4:3):'—')+(layer==='current'||layer==='maximum'?' m':' yr')});canvas.addEventListener('mouseleave',()=>tip.style.display='none');
+  $$('[data-scenario]').forEach(b=>b.addEventListener('click',()=>{scenario=b.dataset.scenario;$$('[data-scenario]').forEach(x=>x.classList.toggle('active',x===b));render()}));$$('[data-layer]').forEach(b=>b.addEventListener('click',()=>{layer=b.dataset.layer;$$('[data-layer]').forEach(x=>x.classList.toggle('active',x===b));render()}));$('#threshold').addEventListener('change',draw);$('#langButton').addEventListener('click',()=>{lang=lang==='zh'?'en':'zh';history.replaceState(null,'',lang==='zh'?'?lang=zh':location.pathname);setText()});$('#export').addEventListener('click',()=>canvas.toBlob(blob=>{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='accepted_'+scenario+'_'+layer+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)},'image/png'));
+  fetch('data/accepted-v2/accepted_v2_manifest.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(m=>{if(m.schema!=='accepted-hydrology-v2-browser-display-1')throw new Error('accepted manifest schema mismatch');manifest=m;setText();render()}).catch(error=>{loading.textContent=(lang==='zh'?'载入失败：':'Load failed: ')+error.message});setText();
+})();
+</script>
+</body>
+</html>

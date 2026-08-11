@@ -282,9 +282,9 @@ def make_science_figure(project: Path, release: Path, zh: bool) -> tuple[Path, P
         else "Long-term Martian groundwater outflow: completed 2-D runs and water budgets"
     )
     subtitle = (
-        "单一等效源代表两条概念沟槽的合计流量；沟槽位置不推测、不标绘；DEM 控制蓄水、溢流和开放边界外排。"
+        "单一等效源代表源坑蓄满后候选低坑缘出口处的坑侧输入；不表示沿东北—西南向沟槽输水；DEM 控制蓄水、溢流和开放边界外排。"
         if zh
-        else "One equivalent source represents the combined discharge of two conceptual troughs; trough geometry is neither inferred nor drawn; DEM controls storage, spill and open-boundary outflow."
+        else "One equivalent source represents crater-side input at the candidate low-rim outlet after basin filling, not surface flow along the NE-SW trough; DEM controls storage, spill and open-boundary outflow."
     )
     draw.text((100, 54), title, font=font(64, bold=True, zh=zh), fill=COLORS["ink"])
     draw.text((104, 145), subtitle, font=font(29, zh=zh), fill=COLORS["muted"])
@@ -340,9 +340,9 @@ def make_dashboard(project: Path, release: Path, zh: bool) -> tuple[Path, Path]:
     draw.rectangle((54, 42, 4746, 220), fill="#132026")
     title = "火星长期地下水出流与 DEM 控制积水模拟" if zh else "Long-term Martian groundwater outflow and DEM-controlled inundation"
     subtitle = (
-        "原二维水动力模型 · 原始点位作为两条概念沟槽合计等效源 · 沟槽几何不推测、不标绘"
+        "原二维水动力模型 · 候选低坑缘出口的坑侧单一等效源 · 不表示沿东北—西南向沟槽输水"
         if zh
-        else "Original 2-D hydrodynamic model · one equivalent source for combined conceptual-trough discharge · no inferred trough geometry"
+        else "Original 2-D hydrodynamic model · one prescribed crater-side source at the candidate low-rim outlet · no NE-SW trough transport"
     )
     draw.text((100, 78), title, font=font(52, bold=True, zh=zh), fill="#edf5f7")
     draw.text((102, 150), subtitle, font=font(25, zh=zh), fill="#9fb1b9")
@@ -423,7 +423,7 @@ def make_dashboard(project: Path, release: Path, zh: bool) -> tuple[Path, Path]:
             rows = (
                 ("固定点位" if zh else "Fixed source", "75.937180°E"),
                 ("纬度" if zh else "Latitude", "18.136689°N"),
-                ("Q 的含义" if zh else "Meaning of Q", "两沟槽合计" if zh else "combined total"),
+                ("Q 的含义" if zh else "Meaning of Q", "坑侧单一规定输入" if zh else "single prescribed crater-side input"),
                 ("数值施加" if zh else "Application", "1 次" if zh else "once"),
                 ("沟槽几何" if zh else "Trough geometry", "不标绘" if zh else "not drawn"),
             )

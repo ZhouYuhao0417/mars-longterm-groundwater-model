@@ -13,7 +13,7 @@
 | `z200` | 550 × 684 | m, int16 | display-resolution elevation |
 | `precision200` | 550 × 684 | categorical | contributing terrain-source class |
 | `q*_d*`, `s*_d*` | 275 × 342 / 3 | quantized depth / m³ | legacy 2-D regression anchors |
-| `crism_selected_sites.csv` | 3 rows | degrees east/north | prescribed C1, P1 and A1 locations |
+| `crism_selected_sites.csv` | 3 rows | degrees east/north | legacy pre-model C1, P1 and A1 audit locations; not the accepted HW1–HW3 set |
 
 ## Completed-run arrays
 
@@ -26,7 +26,20 @@ Each NPY raster has shape `275 × 342` and follows the computational grid with r
 | `_arrival_years.npy` | yr since source start | `NaN` for never reached |
 | `_wet_duration_years.npy` | yr | 0 for never wet |
 
-The wet threshold is `0.05 m`. Summary JSON files define the source, scenario parameters, water ledger, checkpoint results, numerical settings and completion flags.
+The reporting-wet threshold is strictly greater than `0.05 m`; `0.015 m` is reserved for numerical-front arrival/duration diagnostics. Summary JSON files define the source, scenario parameters, water ledger, checkpoint results, numerical settings and completion flags.
+
+## Accepted browser-display bundle
+
+`data/accepted-v2/accepted_v2_manifest.json` binds the accepted `low_f64_v2` and `medium_f64_v2` summaries to their browser arrays and source/display hashes. Every `.f32` file is a little-endian float32 copy of a `275 × 342` source array for visualization only:
+
+| Browser suffix | Meaning |
+|---|---|
+| `_current.f32` | final water depth |
+| `_maximum.f32` | maximum water depth over the run |
+| `_arrival.f32` | first arrival at the 0.015 m numerical-front threshold; NaN if unreached |
+| `_duration.f32` | wet duration at the 0.015 m numerical-front threshold |
+
+The manifest also stores HW1–HW3 coordinates, hydrology rows/columns, accepted-medium maximum depths, the `0.05 m` reporting threshold and the source-interpretation boundary. Browser arrays are not a replacement for the authoritative v2 `.npy` arrays.
 
 ## Coordinate audit
 

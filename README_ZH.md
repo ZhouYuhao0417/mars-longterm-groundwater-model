@@ -1,20 +1,20 @@
 # 火星长期地下水出流模拟
 
-[English README](README.md) · [英文交互页](index.html) · [中文交互页](index_zh.html) · [方法](METHODS_ZH.md) · [数据来源](DATA_SOURCES_ZH.md) · [数据字典](DATA_DICTIONARY.md)
+[English README](README.md) · [已验收低/中情景](accepted_runs.html?lang=zh) · [Accepted low/medium viewer](accepted_runs.html) · [参数探索器](index_zh.html) · [英文参数探索器](index.html) · [方法](METHODS_ZH.md) · [数据来源](DATA_SOURCES_ZH.md) · [数据字典](DATA_DICTIONARY.md)
 
 这是原二维有限体积扩散波水文模型的长期地下水出流扩展和双语科研发布包。二维空间求解器没有替换；DEM 控制蓄水、最低天然鞍部溢流、下游传播和开放边界外排。升级仅涉及长期过程线、解析水量积分和经过验证的多年计算加速。
 
-模型不推测、不标绘两条沟槽。研究者指定的原始点位 `75.937180°E, 18.136689°N` 作为两条概念沟槽合计出流的等效源。任一时刻的总流量 `Q(t)` 只施加一次，不按源网格数量重复。
+规定点位 `75.937180°E, 18.136689°N` 是源坑蓄满后在候选低坑缘出口施加的一次坑侧等效输入。任一时刻的总流量 `Q(t)` 只施加一次，不按源网格数量重复。它不代表沿东北—西南向 Nili Fossae 沟槽的地表输水，也不预设水能沿该沟槽到达 Jezero 西三角洲流域上游。
 
 ## 双语交互前端
 
-- [index.html](index.html)：英文默认页，供英文期刊和 GitHub Pages 使用；
-- [index_zh.html](index_zh.html)：中文完整交互页；
-- 两个页面都可一键切换语言；
-- 页面完全自包含，不请求外部字体、地图服务或脚本；
-- 支持论文截图模式、PNG 导出和参数 JSON 下载。
+- [accepted_runs.html?lang=zh](accepted_runs.html?lang=zh)：论文使用的门控通过低情景和中等情景精确数组；
+- [accepted_runs.html](accepted_runs.html)：同一结果的英文入口；
+- [index_zh.html](index_zh.html) 与 [index.html](index.html)：可调参数的体积映射探索器；
+- 已验收页面可切换最大水深、终态水深、到达年份和湿润时长，显示闭合水账、HW1–HW3、阈值与 PNG 导出；
+- 参数探索器保留方案沟通用途，其中高情景明确标为旧版探索。
 
-交互页用于方案展示和选参，不能代替 `data/completed-runs/` 中的精确二维结果数组。
+已验收页面读取 `data/accepted-v2/` 中带哈希的浏览器显示副本，权威定量记录仍是归档 `.npy` 数组和摘要。可调参数探索器不能替代这些精确结果。
 
 ## 一键验证
 
@@ -33,17 +33,17 @@ python scripts\validate_repository.py
 python model\run_exact_longterm.py --scenario low --fresh
 ```
 
-高情景计算量较大，因此仓库已经包含完成的低/高情景摘要、地图、逐网格到达时间、当前/最大水深、持续淹没时长和数值审计。
+仓库已经包含已验收低情景和中等情景的浏览器资产，因此无需重跑也能检查论文状态。旧高情景不是同版本、全显式 v2 结果，只保留为探索性敏感性材料。
 
 ## 情景状态
 
 | 情景 | 过程线 | 参数 | T | C | 论文状态 |
 |---|---|---|---:|---:|---|
-| 低 | 恒定基流 | `Qb=100 m³/s` | 10 年 | 0.4 | 完成，可用 |
-| 中 | 指数衰减 | `Qb=300`、`Q0=3000 m³/s`、`tau=3 年` | 20 年 | 0.7 | 未完成，禁止空间定量引用 |
-| 高 | 分阶段脉冲 | `Qb=500`、`Q0=5000 m³/s` | 30 年 | 1.0 | 完成，可用 |
+| 低 | 恒定基流 | `Qb=100 m³/s` | 10 年 | 0.4 | v2 已验收；解析蓄水、未溢流 |
+| 中 | 指数衰减 | `Qb=300`、`Q0=3000 m³/s`、`tau=3 年` | 20 年 | 0.7 | v2 已验收；2.660227 年预填充＋17.339773 年显式路由 |
+| 高 | 分阶段脉冲 | `Qb=500`、`Q0=5000 m³/s` | 30 年 | 1.0 | 仅旧版探索；不是 v2 论文结果 |
 
-只有 `complete=true` 且 `paper_usable=true` 的结果进入论文定量图。详见 [EXCLUSIONS.md](EXCLUSIONS.md)。
+只有当前 v2 低情景和中情景同时满足 `complete=true`、`paper_usable=true`、全部论文门控、水账闭合且无下游跳时，才进入已验收页面。详见 [EXCLUSIONS.md](EXCLUSIONS.md)。
 
 ## 使用边界
 

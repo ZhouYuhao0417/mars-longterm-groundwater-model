@@ -11,3 +11,4 @@
 *.csv text eol=lf
 *.json text eol=lf
 data/** -text
+data/accepted-v2/*.json binary

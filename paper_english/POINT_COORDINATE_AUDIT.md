@@ -15,4 +15,4 @@ y_{\mathrm{preview}}=4\,\mathrm{row}_{400}+2.
 | P1 Fe/Mg phyllosilicate | 76.636570°E | 17.807759°N | 154 | 168 | 674 | 618 | completed-run summary |
 | A1 tentative Al-OH | 76.545992°E | 17.889783°N | 142 | 155 | 622 | 570 | completed-run summary |
 
-The two conceptual troughs remain unmarked because their geometry is not inferred by the model.
+The northeast–southwest trough remains unmarked as a source path because the model does not resolve surface transport along it; the plotted source is a separate equivalent crater-side boundary at the candidate low-rim outlet.

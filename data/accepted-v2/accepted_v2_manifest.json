@@ -1,0 +1,306 @@
+{
+  "schema": "accepted-hydrology-v2-browser-display-1",
+  "grid": {
+    "rows": 275,
+    "cols": 342,
+    "cell_m": 400
+  },
+  "thresholds_m": {
+    "numerical_front": 0.015,
+    "reporting_reach": 0.05,
+    "default_map_display": 0.1
+  },
+  "display_conversion": "All browser arrays are little-endian float32 copies made only for display. Authoritative source arrays and JSON summaries remain the quantitative record.",
+  "source_interpretation": {
+    "en": "The prescribed source is an equivalent crater-side overflow input applied after basin filling at the candidate low-rim outlet. It is not surface flow along the northeast-southwest Nili Fossae trough and does not assume hydraulic delivery through that trough to Jezero's western-delta headwaters.",
+    "zh": "规定源项是在源坑蓄满后、候选低坑缘出口处施加的坑侧等效溢流输入；它不代表沿东北—西南向 Nili Fossae 沟槽的地表输水，也不预设水可沿该沟槽到达 Jezero 西三角洲流域上游。"
+  },
+  "sites": [
+    {
+      "site": "HW1",
+      "class": "Fe/Mg-phyllosilicate-like",
+      "row": 152,
+      "col": 156,
+      "lon_e": 76.55228172173842,
+      "lat_n": 17.82234132566724,
+      "accepted_medium_maximum_depth_m": 51.719834821509785,
+      "cell_center_offset_m": 154.23735231986376
+    },
+    {
+      "site": "HW2",
+      "class": "Al-OH-bearing tentative",
+      "row": 162,
+      "col": 169,
+      "lon_e": 76.64034403827846,
+      "lat_n": 17.751861659661607,
+      "accepted_medium_maximum_depth_m": 3.181509223031197,
+      "cell_center_offset_m": 232.00444503949132
+    },
+    {
+      "site": "HW3",
+      "class": "Mg-carbonate-like",
+      "row": 166,
+      "col": 175,
+      "lon_e": 76.6812301138149,
+      "lat_n": 17.727558326556213,
+      "accepted_medium_maximum_depth_m": 0.13213427194262817,
+      "cell_center_offset_m": 116.37471867417477
+    }
+  ],
+  "scenarios": {
+    "low_f64_v2": {
+      "key": "low_f64_v2",
+      "label_en": "Low - analytical no-spill",
+      "label_zh": "低情景—解析蓄水、不溢流",
+      "mode_en": "Analytical basin filling; no downstream hydrodynamic steps",
+      "mode_zh": "解析计算源坑蓄水；未执行下游水动力步",
+      "duration_years": 10.0,
+      "fill_years": null,
+      "parameters": {
+        "key": "low_f64_v2",
+        "process": "constant",
+        "qb_m3s": 100.0,
+        "q0_m3s": 1000.0,
+        "tau_years": 1.0,
+        "duration_years": 10.0,
+        "retention": 0.4
+      },
+      "ledger_km3": {
+        "raw_release": 31.5576,
+        "effective_after_c": 12.62304,
+        "loss_one_minus_c": 18.93456,
+        "source_basin_storage": 12.62304,
+        "downstream_surface_storage": 0.0,
+        "open_boundary_outflow": 0.0,
+        "unresolved_if_partial": 0.0
+      },
+      "outputs": {
+        "covered_sites": 0,
+        "site_count": 3,
+        "maximum_depth_m": 115.10649871826172,
+        "numerical_front_cells_current": 1561,
+        "numerical_front_cells_ever": 1561,
+        "reporting_wet_cells_current": 1559,
+        "reporting_wet_cells_ever": 1559
+      },
+      "numerics": {
+        "grid_m": 400.0,
+        "surface_dt_s": 600.0,
+        "hydrodynamic_dtype": "float64",
+        "explicit_surface_years": 0.0,
+        "downstream_time_skipping": false,
+        "downstream_mass_error": 0.0,
+        "total_ledger_relative_error": 0.0
+      },
+      "qa": {
+        "complete": true,
+        "paper_usable": true,
+        "all_gates_true": true
+      }
+    },
+    "medium_f64_v2": {
+      "key": "medium_f64_v2",
+      "label_en": "Medium - accepted routed run",
+      "label_zh": "中情景—已验收二维路由",
+      "mode_en": "Analytical prefill plus 17.339773 yr of explicit routing",
+      "mode_zh": "解析预填充后进行 17.339773 年显式二维路由",
+      "duration_years": 20.0,
+      "fill_years": 2.66022743256382,
+      "parameters": {
+        "key": "medium_f64_v2",
+        "process": "exponential",
+        "qb_m3s": 300.0,
+        "q0_m3s": 3000.0,
+        "tau_years": 3.0,
+        "duration_years": 20.0,
+        "retention": 0.7
+      },
+      "ledger_km3": {
+        "raw_release": 473.0025485839576,
+        "effective_after_c": 331.10178400877027,
+        "loss_one_minus_c": 141.9007645751873,
+        "source_basin_storage": 134.53242,
+        "downstream_surface_storage": 19.79596144149391,
+        "open_boundary_outflow": 176.7734025672703,
+        "unresolved_if_partial": 6.072998046875e-12
+      },
+      "outputs": {
+        "covered_sites": 0,
+        "site_count": 3,
+        "maximum_depth_m": 380.0,
+        "numerical_front_cells_current": 9222,
+        "numerical_front_cells_ever": 10294,
+        "reporting_wet_cells_current": 9042,
+        "reporting_wet_cells_ever": 10054
+      },
+      "numerics": {
+        "grid_m": 400.0,
+        "surface_dt_s": 600.0,
+        "hydrodynamic_dtype": "float64",
+        "explicit_surface_years": 17.339772567436178,
+        "downstream_time_skipping": false,
+        "downstream_mass_error": 9.004554398267896e-14,
+        "total_ledger_relative_error": 1.8341785940706795e-14
+      },
+      "qa": {
+        "complete": true,
+        "paper_usable": true,
+        "all_gates_true": true
+      }
+    }
+  },
+  "files": {
+    "low_f64_v2_summary.json": {
+      "role": "authoritative accepted summary copy",
+      "source_sha256": "4798aa54d4edd5aa88a85f6dfb3c5eb4ae8a356da2eb42155b35d165437fd1ae",
+      "display_sha256": "4798aa54d4edd5aa88a85f6dfb3c5eb4ae8a356da2eb42155b35d165437fd1ae",
+      "bytes": 5802
+    },
+    "low_f64_v2_map.png": {
+      "role": "authoritative runner preview map copy",
+      "source_sha256": "94fe78027cdb8f2b2da97b3b6fe3ebd5a8dc3b43c304bf4d509bda0a3a456acc",
+      "display_sha256": "94fe78027cdb8f2b2da97b3b6fe3ebd5a8dc3b43c304bf4d509bda0a3a456acc",
+      "bytes": 74505
+    },
+    "low_f64_v2_current.f32": {
+      "role": "current",
+      "source_name": "low_f64_v2_current_depth_m.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "b70380ac157fb86a21be34838b4a5a2067d714063d7a0ba6666cbf716fb795d6",
+      "display_sha256": "25280a156b467ccefa459090d8fe1405025a148aafee1ec83390fc72c6c4b32c",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 115.10649871826172,
+      "nan_count": 0
+    },
+    "low_f64_v2_maximum.f32": {
+      "role": "maximum",
+      "source_name": "low_f64_v2_maximum_depth_m.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "b70380ac157fb86a21be34838b4a5a2067d714063d7a0ba6666cbf716fb795d6",
+      "display_sha256": "25280a156b467ccefa459090d8fe1405025a148aafee1ec83390fc72c6c4b32c",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 115.10649871826172,
+      "nan_count": 0
+    },
+    "low_f64_v2_arrival.f32": {
+      "role": "arrival",
+      "source_name": "low_f64_v2_arrival_years.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "ab3cb078bee57069a702450c8a0d3be0a66009f055a804a8c7a0f0264109fc98",
+      "display_sha256": "8f525d125a761252bee79089eda33a3017e4eebb542bcf54db9324dce1b236f2",
+      "bytes": 376200,
+      "finite_min": 1.9012852590094553e-06,
+      "finite_max": 9.994261741638184,
+      "nan_count": 92489
+    },
+    "low_f64_v2_duration.f32": {
+      "role": "duration",
+      "source_name": "low_f64_v2_wet_duration_years.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "106b8517b5d8fe36ab4adb05702a684b859eda1d0afe2533a8001da2f652a5a6",
+      "display_sha256": "780985d6cff2f2aff955d2a1715f60c348dd0b2805772000062012f94d284dfe",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 9.999998092651367,
+      "nan_count": 0
+    },
+    "medium_f64_v2_summary.json": {
+      "role": "authoritative accepted summary copy",
+      "source_sha256": "a7143bc1a32acb9c56b0bc68024fdaffe2d745c9c3d7d9b219f423f8d49c5dfb",
+      "display_sha256": "a7143bc1a32acb9c56b0bc68024fdaffe2d745c9c3d7d9b219f423f8d49c5dfb",
+      "bytes": 5940
+    },
+    "medium_f64_v2_map.png": {
+      "role": "authoritative runner preview map copy",
+      "source_sha256": "d4ea44dc42eccdd4141b803f301398a11af4f7bcb3b9ef4e1e5776da0369541d",
+      "display_sha256": "d4ea44dc42eccdd4141b803f301398a11af4f7bcb3b9ef4e1e5776da0369541d",
+      "bytes": 95449
+    },
+    "medium_f64_v2_current.f32": {
+      "role": "current",
+      "source_name": "medium_f64_v2_current_depth_m.npy",
+      "source_dtype": "float64",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "e6defadfcf1995b1f5d5f2cb05e6c2ebd67894a15e1b32a494638482c8a5b406",
+      "display_sha256": "00b9bbd873d0134cc5e0202dbd4075442244197ee526fafe88b5c49fb4ed63cb",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 380.0,
+      "nan_count": 0
+    },
+    "medium_f64_v2_maximum.f32": {
+      "role": "maximum",
+      "source_name": "medium_f64_v2_maximum_depth_m.npy",
+      "source_dtype": "float64",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "f352eb68674aac6e460a6dc12ccb52723a0319d3a5ba4f8191ce384e527dbd1a",
+      "display_sha256": "e27c558dff220e1e2c7615b40982cba7acb32f204232843fff2baa3693ff0a94",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 380.0,
+      "nan_count": 0
+    },
+    "medium_f64_v2_arrival.f32": {
+      "role": "arrival",
+      "source_name": "medium_f64_v2_arrival_years.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "92609c010f8c00b303b110c0e512dd260c0f0772467c3b7a859201ec505c9749",
+      "display_sha256": "0eecd1dcce121cbe0b939e1f0d41ffaba13b575b7eeb6f2e0b5367b730c192ab",
+      "bytes": 376200,
+      "finite_min": 3.2922688575354186e-08,
+      "finite_max": 8.198880195617676,
+      "nan_count": 83756
+    },
+    "medium_f64_v2_duration.f32": {
+      "role": "duration",
+      "source_name": "medium_f64_v2_wet_duration_years.npy",
+      "source_dtype": "float32",
+      "display_dtype": "float32 little-endian",
+      "shape": [
+        275,
+        342
+      ],
+      "source_sha256": "7d951188c076ab0c355a4669eeff2b9603b3a41a3d266dad0593e3abe3d661e5",
+      "display_sha256": "72e2702cab7e77ec1abca616ebd434aff8692e8bf773aff1bbbf7e12c89ad850",
+      "bytes": 376200,
+      "finite_min": 0.0,
+      "finite_max": 20.0,
+      "nan_count": 0
+    }
+  }
+}
